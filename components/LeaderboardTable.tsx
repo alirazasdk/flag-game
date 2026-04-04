@@ -55,7 +55,7 @@ export default function LeaderboardTable({
         <tbody>
           {rows.map((entry) => {
             const isMe = entry.browser_id === currentBrowserId
-            const rankIcon = RANK_ICON[entry.rank]
+            const rankIcon = entry.rank !== undefined ? RANK_ICON[entry.rank] : undefined
             return (
               <tr
                 key={entry.id}
